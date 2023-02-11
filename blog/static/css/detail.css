@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.blog-post-detail {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-bottom: 10px solid lightgray;
+}
+
+.post-title-detail {
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.post-date-detail {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.post-text-detail {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.post-image-detail {
+    max-width: 500px;
+    margin: 30px auto;
+    display: block;
+}
+
+

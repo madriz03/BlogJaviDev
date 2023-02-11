@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block 'style'%}<link rel="stylesheet" href="{% static 'css/detail.css'%}"> {% endblock %}
+{% block 'content' %}
+  <main>
+    <div class="blog-post-detail">
+        <img class ="post-image" src="#" alt="">
+        <h2 class="post-title-detail">{{post.title}}</h2>
+        <p class="post-author-detail">{{post.author}}</p>
+        <p class="post-date-detail">{{post.date}}</p>
+        <p class="post-text-detail">
+          {{post.description}} 
+        </p>
+    </div>
+      
+  </main>
+{% endblock %}

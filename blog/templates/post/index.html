@@ -1,13 +1,23 @@
+{% extends 'layout/base.html' %}
+{% load static %}
 
+{% block 'style'%}<link rel="stylesheet" href="{% static 'css/index.css'%}"
 
-<div class="blog-post">
-    {% for post in post %}
-    <h2 class="post-title">{{post.title}}</h2>
-    <p class="post-date">{{post.author}}</p>
-    <p class="post-date">{{post.date}}</p>
-    <p class="post-text">
-      {{post.description}} 
-    </p>
-    <a href="#" class="read-more">Ver más</a>
-    {% endfor %}
-  </div>
+{% endblock %}
+{% block 'content' %}
+  <main>
+    <div class="blog-post">
+        {% for post in post %}
+        <h2 class="post-title">{{post.title}}</h2>
+        <p class="post-date">{{post.author}}</p>
+        <p class="post-date">{{post.date}}</p>
+        <p class="post-text">
+          {{post.description}} 
+        </p>
+        <a href="{% url 'detail' id=post.id %}" class="read-more">Ver más</a>
+        {% endfor %}
+        
+      </div>
+      
+  </main>
+{% endblock %}
