@@ -6,6 +6,9 @@ body {
     background-color: #f7f7f7;
 }
 
+.content-detail{
+    margin-top: 150px;
+}
 .blog-post-detail {
     max-width: 800px;
     margin: 30px auto;

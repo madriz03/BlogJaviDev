@@ -1,9 +1,11 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block 'style'%}<link rel="stylesheet" href="{% static 'css/detail.css'%}"> {% endblock %}
+{% block 'style'%} <link rel="stylesheet" href="{% static 'css/detail.css'%}">
+<link rel="stylesheet" href="{% static 'css/comment.css'%}">
+{% endblock %}
 {% block 'content' %}
-  <main>
+  <main class='content-detail'>
     <div class="blog-post-detail">
         <img class ="post-image" src="#" alt="">
         <h2 class="post-title-detail">{{post.title}}</h2>
@@ -13,6 +15,21 @@
           {{post.description}} 
         </p>
     </div>
-      
+    <form action="{% url 'add_comment' id=post.id %}" method="POST">
+      {% csrf_token %}
+      <textarea name="comment"></textarea>
+      <button type="submit">Añadir comentario</button>
+    </form>
+    
+    <div class="comentarios">
+      {% for comments in comment %}
+      <p class="user">{{comments.author}}</p>
+      <p class="date">{{comments.date}}</p>
+      <p class="text">
+        {{comments.text_comment}} 
+      </p>
+      {% endfor %}
+  </div>
   </main>
+  
 {% endblock %}

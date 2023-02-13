@@ -1,11 +1,11 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block 'style'%}<link rel="stylesheet" href="{% static 'css/index.css'%}"
+{% block 'style'%}<link rel="stylesheet" href="{% static 'css/index.css'%}">
 
 {% endblock %}
 {% block 'content' %}
-  <main>
+  <main class= 'content'>
     <div class="blog-post">
         {% for post in post %}
         <h2 class="post-title">{{post.title}}</h2>

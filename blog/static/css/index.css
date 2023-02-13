@@ -7,7 +7,9 @@ body {
     background-color: #f7f7f7;
   }
 
-
+.content{
+  margin-top: 150px;
+}
   .blog-post {
     max-width: 700px;
     margin: 30px auto;
