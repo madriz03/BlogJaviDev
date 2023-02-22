@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-   
+    
 
-    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+
+    
     
 
     {% block 'style'%} {% endblock %}
@@ -19,11 +21,11 @@
     <nav>
   <ul>
     <li><a href="{% url 'index' %}">Home</a></li>
-    <li><a href="{% url 'register' %}">About me</a></li>
+    <li><a href="{% url 'register' %}">Registro</a></li>
     {% if user.is_authenticated %}
-      <li><a href="#logout">Logout</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
     {% else %}
-      <li><a href="#login">Login</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
     {% endif %}
   </ul>
 </nav>

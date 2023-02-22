@@ -1,35 +1,34 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block 'style'%}<link rel="stylesheet" href="{% static 'css/register.css'%}">
+{% block 'style' %}<link rel="stylesheet" href="{% static 'css/register.css'%}">
 
 {% endblock %}
 
 {% block 'content' %}
 <main class="content">
-    <div class="register-form-container">
-      <h2>Regístrate</h2>
-      <form method="post">
-        {% csrf_token %}
-        <div class="form-group">
-          {{ form.username.label_tag }}
-          {{ form.username }}
-        </div>
-        <div class="form-group">
-          {{ form.email.label_tag }}
-          {{ form.email }}
-        </div>
-        <div class="form-group">
-          {{ form.password1.label_tag }}
-          {{ form.password1 }}
-        </div>
-        <div class="form-group">
-          {{ form.password2.label_tag }}
-          {{ form.password2 }}
-        </div>
-        <button type="submit" class="submit-button">Registrarse</button>
-      </form>
+  <div class="register-form-container">
+    <h2>Regístrate</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <input type="text" name="{{ form.username.name }}" placeholder="Nombre de usuario" {% if form.username.value %}value="{{ form.username.value }}"{% endif %}>
+      </div>
+      <div class="form-group">
+        <input type="email" name="{{ form.email.name }}" placeholder="Dirección de correo electrónico" {% if form.email.value %}value="{{ form.email.value }}"{% endif %}>
+      </div>
+      <div class="form-group">
+        <input type="password" name="{{ form.password1.name }}" placeholder="Contraseña">
+      </div>
+      <div class="form-group">
+        <input type="password" name="{{ form.password2.name }}" placeholder="Confirmar contraseña">
+      </div>
+      <button type="submit" class="submit-button">Registrarse</button>
+      <div class="form-group-login">
+        <small class="login">Ya tienes una cuenta? <a href="{% url 'login' %}">Login</a></small>
     </div>
-  </main>
+    </form>
+  </div>
+</main>
 
 {% endblock %}
