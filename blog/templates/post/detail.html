@@ -12,7 +12,9 @@
         <p class="post-author-detail">{{post.author}}</p>
         <p class="post-date-detail">{{post.date}}</p>
         <p class="post-text-detail">
-          {{post.description}} 
+          {% autoescape off %}
+            {{post.description}}
+          {% endautoescape %}
         </p>
     </div>
     <form action="{% url 'add_comment' id=post.id %}" method="POST">

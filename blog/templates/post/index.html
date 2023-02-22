@@ -12,7 +12,9 @@
         <p class="post-date">{{post.author}}</p>
         <p class="post-date">{{post.date}}</p>
         <p class="post-text">
-          {{post.description}} 
+          {% autoescape off %}
+            {{post.description}}
+          {% endautoescape %}
         </p>
         <a href="{% url 'detail' id=post.id %}" class="read-more">Ver más</a>
         {% endfor %}
