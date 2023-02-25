@@ -3,6 +3,7 @@
 
 {% block 'style'%} <link rel="stylesheet" href="{% static 'css/detail.css'%}">
 <link rel="stylesheet" href="{% static 'css/comment.css'%}">
+
 {% endblock %}
 {% block 'content' %}
   <main class='content-detail'>
@@ -27,9 +28,15 @@
       {% for comments in comment %}
       <p class="user">{{comments.author}}</p>
       <p class="date">{{comments.date}}</p>
+      <p class= "comment-actions">
+        <a href="#" class="btn-edit"><i class="fa fa-edit" ></i> Editar</a>
+        <a href="{% url 'delete' id=comments.id %}" class="btn-delete"><i class="fa fa-trash"></i> Eliminar</a>
+      </p>
+
       <p class="text">
         {{comments.text_comment}} 
       </p>
+      
       {% endfor %}
   </div>
   </main>

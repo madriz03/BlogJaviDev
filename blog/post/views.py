@@ -51,4 +51,16 @@ def add_comment(request, id):
         comment.save()
    
     return redirect('detail', id=id)
+
+
+def comment_delete(request, id):
+    comment = Comment.objects.get(id=id)
+    if request.user == comment.author:
+        comment.delete()
+        #Incluir Messaje de exito
+        return redirect('detail', id=comment.post.id)
+    
+    else:
+        # Agregar Message de error
+        return redirect('detail', id=comment.post.id)
     
