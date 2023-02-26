@@ -57,7 +57,7 @@
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #333;
+    background-color: #50577A;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -66,7 +66,7 @@
   }
   
   .submit-button:hover {
-    background-color: #555;
+    background-color: #6B728E;
     box-shadow: 0px 0px 5px #ccc;
   }
   

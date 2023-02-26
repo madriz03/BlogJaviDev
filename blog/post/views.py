@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseForbidden
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
 from  .forms import UserRegisterForm
@@ -12,6 +12,8 @@ def index(request):
         'post': post
     }
     return render(request, 'post/index.html', context)
+
+
 
 
 def register(request):
@@ -29,6 +31,7 @@ def register(request):
 
 
 
+
 def detail(request, id):
     post = Post.objects.get(id=id)
     comment = Comment.objects.filter(post=post)
@@ -37,6 +40,7 @@ def detail(request, id):
         'post': post,
         'comment': comment
     }
+
     return render(request, 'post/detail.html', context)
 
 
@@ -51,6 +55,9 @@ def add_comment(request, id):
         comment.save()
    
     return redirect('detail', id=id)
+
+
+
 
 
 def comment_delete(request, id):

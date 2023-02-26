@@ -5,7 +5,7 @@
     }
 
     nav {
-      background-color: #3f3f3f;
+      background-color: #50577A;
       display: flex;
       justify-content: center;
       position: fixed;
@@ -26,7 +26,7 @@
     
     nav li {
       display: inline-block;
-      background-color: #3f3f3f;
+      background-color: #50577A;
       padding: 20px;
     }
     
@@ -39,7 +39,7 @@
     }
     
     nav a:hover {
-      background-color: #d9d9d9;
+      background-color: #6B728E;
       color: black;
       box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     }

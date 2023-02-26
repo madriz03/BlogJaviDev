@@ -47,7 +47,7 @@ body {
     display: block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #50577A;
     color: #fff;
     border-radius: 20px;
     text-align: center;
@@ -57,6 +57,6 @@ body {
 
 
   .read-more:hover {
-    background-color: #999;
+    background-color: #6B728E;
   }
   

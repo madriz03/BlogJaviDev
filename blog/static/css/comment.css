@@ -40,12 +40,14 @@
 }
 
 .user:hover {
-    background-color: lightgray;
+    background-color: #6B728E;
+    color: white;
     cursor: pointer;
 }
 
 .text:hover{
-    background-color: lightgray;
+    background-color: #6B728E;
+    color: white;
     cursor: pointer;
 } 
 
@@ -76,14 +78,14 @@ button[type="submit"] {
     font-size: 16px;
     border-radius: 10px;
     border: none;
-    background-color: lightgray;
+    background-color: #6B728E;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: gray;
+    background-color: #50577A;
 }
 
 
