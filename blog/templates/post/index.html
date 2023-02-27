@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block 'style'%}<link rel="stylesheet" href="{% static 'css/index.css'%}">
+{% block 'style'%}<link rel="stylesheet" href="{% static 'blog/css/index.css'%}">
 
 {% endblock %}
 {% block 'content' %}
@@ -16,7 +16,7 @@
             {{post.description}}
           {% endautoescape %}
         </p>
-        <a href="{% url 'detail' id=post.id %}" class="read-more">Ver más</a>
+        <a href="{% url 'detail' id=post.id %}" class="read-more"><i class="fa fa-arrow-circle-right"></i> Ver más</a>
         {% endfor %}
         
       </div>

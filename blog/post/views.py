@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseForbidden
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
-from  .forms import UserRegisterForm
+
 
 # Create your views here.
 
@@ -15,7 +15,7 @@ def index(request):
 
 
 
-
+"""
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -29,7 +29,7 @@ def register(request):
     return render(request, 'post/register.html', {'form': form})
     
 
-
+"""
 
 
 def detail(request, id):

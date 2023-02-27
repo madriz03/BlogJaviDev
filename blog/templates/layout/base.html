@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'comun/css/base.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-pLjRHuVp0xJvZuq3igM0Fzl3VrXNLtSz2uF7L+tnT/nRBl4rmilK1Q+yfiBJa6RZ/93lSfDgSfbLqYiY0NlEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -22,13 +22,13 @@
 <body>
     <nav>
   <ul>
-    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
     
     {% if user.is_authenticated %}
-      <li><a href="{% url 'logout' %}">Logout</a></li>
+      <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
     {% else %}
-      <li><a href="{% url 'register' %}">Registro</a></li>
-      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Registro</a></li>
+      <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
       
     {% endif %}
   </ul>
@@ -37,6 +37,6 @@
     {% block 'content' %} {% endblock %}
     {% block 'scripts' %} {% endblock %}
     
-
+    <script src="https://kit.fontawesome.com/9e1315c18f.js" crossorigin="anonymous"></script>
 </body>
 </html>

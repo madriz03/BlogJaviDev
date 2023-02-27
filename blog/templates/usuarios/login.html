@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block 'style' %} <link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endblock %}
+{% block 'style' %} <link rel="stylesheet" href="{% static 'usuarios/css/login.css' %}"> {% endblock %}
 
 {% block 'content' %}
 
@@ -16,7 +16,7 @@
         <div class="form-group">
           <input type="password" name="{{ form.password.name }}" placeholder="Contraseña">
         </div>
-        <button type="submit" class="submit-button">Iniciar Sesion</button>
+        <button type="submit" class="submit-button"> <i class="fa fa-sign-in"></i> Iniciar Sesion</button>
         <div class="form-group-register">
             <small class="register" >Aun no tienes cuenta? <a href="{% url 'register' %}">Registrate ahora</a></small>
         </div>
