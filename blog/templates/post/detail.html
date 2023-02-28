@@ -20,13 +20,20 @@
         </p>
     </div>
 
-    
+   
+
     <form action="{% url 'add_comment' id=post.id %}" method="POST">
       {% csrf_token %}
-      <textarea name="comment"></textarea>
+      <textarea name="comment" id="comment"></textarea>
+      <div class="char-count-container">
+        <span id="char-count">MAX/250</span>
+      </div>
       <button type="submit"><i class="fa fa-comment"></i> Añadir comentario</button>
     </form>
-    
+  
+    {% include 'post/partials/contador_caracteres.html' %}
+
+
     <div class="comentarios">
       {% for comments in comment %}
       <p class="user">{{comments.author}}</p>

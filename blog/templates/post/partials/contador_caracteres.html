@@ -1,0 +1,18 @@
+<script>
+    // Obtener el campo de comentarios y la etiqueta de contador de caracteres
+        var commentField = document.getElementById('comment');
+        var charCount = document.getElementById('char-count');
+        
+
+        // Establecer el límite máximo de caracteres
+        var maxChars = 250;
+
+        // Actualizar el contador de caracteres en tiempo real
+        commentField.addEventListener('input', function() {
+          var remainingChars = maxChars - commentField.value.length;
+          charCount.innerHTML = remainingChars;
+          console.log('Evento de entrada detectado'); // Agregado para depurar
+        });
+
+
+  </script>

@@ -10,7 +10,20 @@
     
 }
 
+.char-count-container {
+    position: absolute;
+    top: 0;
+    right: 28px;
+    margin: 10px;
+  }
 
+  
+#char-count {
+    font-size: 9px;
+    color: #666;
+  }
+  
+  
 
 .user{
     font-size: 16px;
@@ -33,7 +46,7 @@
     line-height: 1.5;
     clear: both;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
 
     
@@ -53,6 +66,7 @@
 
 
 form {
+    position: relative;
     width: 100%;
     max-width: 800px;
     margin: 30px auto;
