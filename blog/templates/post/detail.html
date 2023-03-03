@@ -1,5 +1,6 @@
 {% extends 'layout/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block 'style'%} <link rel="stylesheet" href="{% static 'blog/css/detail.css'%}">
 <link rel="stylesheet" href="{% static 'blog/css/comment.css' %}">
@@ -12,7 +13,7 @@
         <img class ="post-image" src="#" alt="">
         <h2 class="post-title-detail">{{post.title}}</h2>
         <p class="post-author-detail">{{post.author}}</p>
-        <p class="post-date-detail">{{post.date}}</p>
+        <p class="post-date-detail">{{post.date|naturaltime}}</p>
         <p class="post-text-detail">
           {% autoescape off %}
             {{post.description}}
@@ -37,7 +38,7 @@
     <div class="comentarios">
       {% for comments in comment %}
       <p class="user">{{comments.author}}</p>
-      <p class="date">{{comments.date}}</p>
+      <p class="date">{{comments.date|naturaltime}}</p>
       <p class= "comment-actions">
         {% if request.user == comments.author %}
           <a href="{% url 'delete' id=comments.id %}" class="btn-delete"><i class="fa-solid fa-trash"></i></a>

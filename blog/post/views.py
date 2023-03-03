@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
-    post = Post.objects.all()
+    post = Post.objects.all().order_by('-date')
     context = {
         'post': post
     }
@@ -15,21 +15,6 @@ def index(request):
 
 
 
-"""
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-
-    else:
-        form = UserRegisterForm()
-       
-    return render(request, 'post/register.html', {'form': form})
-    
-
-"""
 
 
 def detail(request, id):
@@ -51,8 +36,10 @@ def detail(request, id):
 def add_comment(request, id):
     post = Post.objects.get(id=id)
     if request.method == 'POST':
-        comment = Comment(text_comment=request.POST['comment'], post=post, author=request.user)
-        comment.save()
+        comment_text = request.POST.get('comment', '').strip()
+        if comment_text:
+            comment = Comment(text_comment=request.POST['comment'], post=post, author=request.user)
+            comment.save()
    
     return redirect('detail', id=id)
 
