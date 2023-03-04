@@ -44,5 +44,31 @@ Existe el directorio **partials** que esta destinado para francciones de codigo 
 ## Deploy
 Este proyecto estara desplegado en Digital Ocean, sin embargo compartire con ustedes como se ve hasta el momento la interfaz del Blog.
 
-![Home](https://drive.google.com/file/d/1hCdLfW7Q3TxHPgOBtCanf1r5FRyCOWS-/view?usp=share_link "Home")
+## Home
 
+La vista Home lista todos los post con una fraccion de su contenido, puede darle ver mas para ver el contenido completo en la vista detail.
+
+![Home](https://live.staticflickr.com/65535/52725539887_ddb7cec071_c.jpg "Home")
+
+## Detail
+Esta vista muestra el detalle el post completo y ademas los comentarios asociados a ese post.
+
+![Detail](https://live.staticflickr.com/65535/52726325234_3211451272_z.jpg "Detail")
+
+## Registro
+Esta vista muestra el formulario para registro de usuarios
+
+![Registro](https://live.staticflickr.com/65535/52726557218_358d2f089e_w.jpg "Registro")
+
+## Login
+Esta vista muestra el formulario de inicio de sesion.
+
+![Login](https://live.staticflickr.com/65535/52725559807_ba321aa9a9_n.jpg "Login")
+
+
+## Invitacion
+Si llegaste hasta aca muchas gracias, cualquier duda sobre el proyecto o colaboracion que quieras hacer no dudes en dejarme un mensaje, cuando el proyecto este en priduccion espero puedas interactuar con el y hacerte un usuario.
+
+## Mis Redes Sociales
+[Linkedin](http://https://www.linkedin.com/in/javiermadriz3/ "Linkedin")
+[Twitter](https://twitter.com/madriz03 "Twitter")
