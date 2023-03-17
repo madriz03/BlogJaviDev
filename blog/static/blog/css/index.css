@@ -1,14 +1,17 @@
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
     background-color: #f7f7f7;
   }
 
+
+
 .content{
   margin-top: 150px;
+  
 }
   .blog-post {
     max-width: 700px;
@@ -20,6 +23,7 @@ body {
     border-bottom: 1px solid lightgray;
   }
   .post-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 20px;

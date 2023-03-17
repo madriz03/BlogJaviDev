@@ -2,6 +2,8 @@
 {% load static %}
 {% load humanize %}
 
+{% block 'title' %}Detalle-Post{% endblock %}
+
 {% block 'style'%} <link rel="stylesheet" href="{% static 'blog/css/detail.css'%}">
 <link rel="stylesheet" href="{% static 'blog/css/comment.css' %}">
 {% endblock %}
@@ -15,9 +17,9 @@
         <p class="post-author-detail">{{post.author}}</p>
         <p class="post-date-detail">{{post.date|naturaltime}}</p>
         <p class="post-text-detail">
-          {% autoescape off %}
-            {{post.description}}
-          {% endautoescape %}
+          
+            {{post.description|safe}}
+          
         </p>
     </div>
 
@@ -34,9 +36,9 @@
   
     {% include 'post/partials/contador_caracteres.html' %}
 
-
+    {% for comments in comment %}
     <div class="comentarios">
-      {% for comments in comment %}
+      
       <p class="user">{{comments.author}}</p>
       <p class="date">{{comments.date|naturaltime}}</p>
       <p class= "comment-actions">
@@ -49,8 +51,9 @@
         {{comments.text_comment}} 
       </p>
       
-      {% endfor %}
+     
   </div>
+  {% endfor %}
   </main>
   
 {% endblock %}

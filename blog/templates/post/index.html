@@ -7,20 +7,22 @@
 {% endblock %}
 {% block 'content' %}
   <main class= 'content'>
+    {% for post in post %}
     <div class="blog-post">
-        {% for post in post %}
         <h2 class="post-title">{{post.title}}</h2>
         <p class="post-date">{{post.author}}</p>
         <p class="post-date">{{post.date|naturaltime}}</p>
-        <p class="post-text">
-          {% autoescape off %}
-            {{post.description}}
-          {% endautoescape %}
-        </p>
+       
+          <p class="post-text">
+            
+              {{post.description|safe|truncatechars:400}}
+              
+          </p>
+        
         <a href="{% url 'detail' id=post.id %}" class="read-more"><i class="fa fa-arrow-circle-right"></i> Ver más</a>
-        {% endfor %}
+        
         
       </div>
-      
+      {% endfor %}
   </main>
 {% endblock %}
