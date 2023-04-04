@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    }
+
+    nav {
+      background-color: #50577A;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      padding: 20px;
+      width: 100%;
+      margin-bottom: 70px;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    nav li {
+      display: inline-block;
+      background-color: #50577A;
+      padding: 20px;
+    }
+    
+    nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+    }
+    
+    nav a:hover {
+      
+      color: black;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    
