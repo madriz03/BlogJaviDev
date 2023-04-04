@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseForbidden
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
 
@@ -12,7 +11,6 @@ def index(request):
         'post': post
     }
     return render(request, 'post/index.html', context)
-
 
 
 
@@ -31,7 +29,6 @@ def detail(request, id):
 
 
 
-
 @login_required
 def add_comment(request, id):
     post = Post.objects.get(id=id)
@@ -42,7 +39,6 @@ def add_comment(request, id):
             comment.save()
    
     return redirect('detail', id=id)
-
 
 
 

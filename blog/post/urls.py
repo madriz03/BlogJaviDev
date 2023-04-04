@@ -1,5 +1,4 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from post import views
 
 
@@ -9,5 +8,4 @@ urlpatterns = [
     path('post/<int:id>/add_comment/', views.add_comment, name='add_comment'),
     path('comment_delete/<int:id>', views.comment_delete, name='delete')
     
-    
-]
+    ]
