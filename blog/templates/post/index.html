@@ -1,4 +1,4 @@
-	{% extends 'layout/base.html' %}
+{% extends 'layout/base.html' %}
 {% load static %}
 {% load humanize %}
 
@@ -7,16 +7,11 @@
 {% endblock %}
 {% block 'content' %}
   <main class= 'content'>
-<<<<<<< HEAD
     {% for post in post %}
-=======
-	
->>>>>>> cabb034 (Primer commit, todo funcionando)
     <div class="blog-post">
         <h2 class="post-title">{{post.title}}</h2>
         <p class="post-date">{{post.author}}</p>
         <p class="post-date">{{post.date|naturaltime}}</p>
-<<<<<<< HEAD
        
           <p class="post-text">
             
@@ -24,9 +19,7 @@
               
           </p>
         
-=======
-        
->>>>>>> cabb034 (Primer commit, todo funcionando)
+
         <a href="{% url 'detail' id=post.id %}" class="read-more"><i class="fa fa-arrow-circle-right"></i> Ver más</a>
         
         
