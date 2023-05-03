@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
-
-
+from django.contrib import messages
 # Create your views here.
 
 def index(request):
@@ -37,7 +36,9 @@ def add_comment(request, id):
         if comment_text:
             comment = Comment(text_comment=request.POST['comment'], post=post, author=request.user)
             comment.save()
-   
+            messages.success(request, "Se agrego tu comentario")
+       
+            
     return redirect('detail', id=id)
 
 
@@ -47,7 +48,7 @@ def comment_delete(request, id):
     comment = Comment.objects.get(id=id)
     if request.user == comment.author:
         comment.delete()
-        #Incluir Messaje de exito
+        messages.success(request, "Eliminaste tu comentario")
         return redirect('detail', id=comment.post.id)
     
     else:

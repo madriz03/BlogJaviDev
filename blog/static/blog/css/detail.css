@@ -44,4 +44,16 @@ body {
     display: block;
 }
 
+.message-container{
+    margin-top: 20px;
+}
 
+.success{
+    width: 30%;
+    padding: 10px;
+    background-color: #B9EDDD;
+    color: #0EA293;
+    border: 1px solid #0EA293;
+    font-weight: bold;
+    
+}

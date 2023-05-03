@@ -61,6 +61,14 @@
     transition: all 0.2s ease-in-out;
   }
   
+  .error{
+    width: 100%;
+    padding: 10px;
+    background-color: #FFCCCC;
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    font-weight: bold;
+  }
   .submit-button:hover {
     background-color: #6B728E;
     box-shadow: 0px 0px 5px #ccc;

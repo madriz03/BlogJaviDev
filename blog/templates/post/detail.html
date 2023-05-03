@@ -25,7 +25,7 @@
     </div>
 
    
-
+   
     <form action="{% url 'add_comment' id=post.id %}" method="POST">
       {% csrf_token %}
       <textarea name="comment" id="comment"></textarea>
@@ -33,6 +33,15 @@
         <span id="char-count">MAX/250</span>
       </div>
       <button type="submit"><i class="fa fa-comment"></i> Añadir comentario</button>
+      <div class = "message-container">
+          {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+            </ul>
+          {% endif %}
+    </div>
     </form>
   
     {% include 'post/partials/contador_caracteres.html' %}
@@ -40,9 +49,7 @@
 
     {% for comments in comment %}
     <div class="comentarios">
-      
-
-	
+     
 
       <p class="user">{{comments.author}}</p>
       <p class="date">{{comments.date|naturaltime}}</p>
