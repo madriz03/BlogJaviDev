@@ -26,7 +26,7 @@
 
    
    
-    <form action="{% url 'add_comment' id=post.id %}" method="POST">
+    <form action="{% url 'add_comment' id=post.id slug=post.slug %}" method="POST">
       {% csrf_token %}
       <textarea name="comment" id="comment"></textarea>
       <div class="char-count-container">
@@ -55,7 +55,7 @@
       <p class="date">{{comments.date|naturaltime}}</p>
       <p class= "comment-actions">
         {% if request.user == comments.author %}
-          <a href="{% url 'delete' id=comments.id %}" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
+          <a href="{% url 'delete' id=comments.id slug=comments.post.slug %}" class="btn-delete"><i class="fa-solid fa-trash"></i></a>
         {% endif %}
       </p>
 

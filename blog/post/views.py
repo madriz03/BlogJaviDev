@@ -14,8 +14,8 @@ def index(request):
 
 
 
-def detail(request, id):
-    post = Post.objects.get(id=id)
+def detail(request, id, slug):
+    post = Post.objects.get(id=id, slug=slug)
     comment = Comment.objects.filter(post=post)
 
     context = {
@@ -29,7 +29,7 @@ def detail(request, id):
 
 
 @login_required
-def add_comment(request, id):
+def add_comment(request, id, slug):
     post = Post.objects.get(id=id)
     if request.method == 'POST':
         comment_text = request.POST.get('comment', '').strip()
@@ -39,19 +39,19 @@ def add_comment(request, id):
             messages.success(request, "Se agrego tu comentario")
        
             
-    return redirect('detail', id=id)
+    return redirect('detail', id=id, slug=slug)
 
 
 
 
-def comment_delete(request, id):
+def comment_delete(request, id, slug):
     comment = Comment.objects.get(id=id)
     if request.user == comment.author:
         comment.delete()
         messages.success(request, "Eliminaste tu comentario")
-        return redirect('detail', id=comment.post.id)
+        return redirect('detail', id=comment.post.id, slug=comment.post.slug)
     
     else:
         # Agregar Message de error
-        return redirect('detail', id=comment.post.id)
+        return redirect('detail', id=comment.post.id, slug=comment.post.slug)
     
