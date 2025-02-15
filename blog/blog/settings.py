@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL
+from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL, TEST
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
