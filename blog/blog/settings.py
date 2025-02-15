@@ -33,7 +33,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG
 
-ALLOWED_HOSTS = ALLOWED_HOSTS
+ALLOWED_HOSTS = ['18.188.119.117', 'localhost'] # Almacenar en variables de entornos en produccion
 
 
 # Application definition
