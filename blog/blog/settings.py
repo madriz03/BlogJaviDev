@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL, TEST
+# from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL, TEST
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,14 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Api de tinyMCE
 
-API_URL = API_URL
+# API_URL = API_URL
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = "*_+q+5wd!0pwxd-cu2(l@=*#oeyi0gya&q9wo4n!uh9(0%-g57"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG
+DEBUG = True
 
 ALLOWED_HOSTS = ['18.188.119.117', 'localhost'] # Almacenar en variables de entornos en produccion
 
@@ -87,16 +87,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DATABASE_NAME,
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
-        'HOST': DATABASE_HOST,
-        'PORT': DATABASE_PORT,
-    }
-}
+DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'mydatabase' } }
 
 
 # Password validation
