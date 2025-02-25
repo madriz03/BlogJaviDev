@@ -7,11 +7,12 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/4.1/ref/settings/
+https://docs.djangoprojec.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-# from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL, TEST
+import os
+#from settings_config import DEBUG, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, ALLOWED_HOSTS, API_URL
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,16 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Api de tinyMCE
 
-# API_URL = API_URL
+API_URL = os.environ.get('API_URL')
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "*_+q+5wd!0pwxd-cu2(l@=*#oeyi0gya&q9wo4n!uh9(0%-g57"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1')
 
-ALLOWED_HOSTS = ['18.188.119.117', 'localhost'] # Almacenar en variables de entornos en produccion
+# Se debe definir como cadenas separadas por comma, split las separa y coloca en formato de lista
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if os.environ.get('ALLOWED_HOSTS') else []
 
 
 # Application definition
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'tinymce',
+   # 'tinymce',
     'django.contrib.humanize',
     'post',
     'usuarios'
@@ -87,7 +89,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'mydatabase' } }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT'),
+    }
+}
 
 
 # Password validation
@@ -126,7 +137,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles' # No se usara un sitio externo para servir los estaicos, lo hara el servidor
+STATIC_ROOT = BASE_DIR / 'staticfiles/' # No se usara un sitio externo para servir los estaicos, lo hara el servidor
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
